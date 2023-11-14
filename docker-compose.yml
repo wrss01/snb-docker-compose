@@ -1,8 +1,6 @@
 version: '3'
 
-project: 
-  name: snb
-  
+ 
 services:
    db:
      image: mysql:5.7
