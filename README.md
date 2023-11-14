@@ -1,7 +1,10 @@
 # snb-docker-compose
 smartnotebook docker-compose 部署脚本
 
-## docker and docker-compose 版本：
+-  本部署脚本生成的服务仅支持SmartNotebook 基本功能，如需扩展功能请与我们联系！
+-  暂不支持Mac 系统
+
+## docker and docker-compose 版本：测试环境的参考版本
 - docker Version: 18.06.1-ce
 - Docker Compose version: v2.23.0
 
