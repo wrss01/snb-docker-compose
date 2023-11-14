@@ -14,3 +14,52 @@ git clone https://github.com/wrss01/snb-docker-compose.git
 cd snb-docker-compose/
 chmod +x wait-for-it.sh 
 ```
+
+## 创建和启动容器组(Create and start containers)
+```shell
+docker-compose --project-name snb up
+```
+
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/8d1fa962-fdcf-4b8f-8eea-65cb40887d85)
+
+## 访问smartnotebook:
+http://ip/
+比如：http://172.30.81.118/
+
+##### 登录页如下：
+
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/6a7cb7e0-593c-4071-b7f6-4e945d26b8f9)
+
+##### 默认用户名和密码：
+
+- 默认用户名：snb-demo@smartnotebook.tech
+- 默认密码：123456
+
+##### 登录成功后的首页：
+
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/e3c35e3c-10c5-4447-a0b0-59f78f47db63)
+
+## 创建第一notebook：
+
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/8dda2eaa-77a6-4ed7-99d8-81537af834bd)
+
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/bec3d224-dc31-4b8e-9ef4-0b30a708151c)
+
+##### 编写第一行python 代码并运行
+
+```python
+print("Welcome to the world of SmartNoteBook \n"*15)
+```
+
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/fc4d4830-833d-434b-bb46-d5d815b52b86)
+
+## 问题反馈和交流
+##### 新语数据故事会
+![qrcode_for_gh_dba8fcd77b28_344 (1)](https://github.com/wrss01/snb-docker-compose/assets/39665821/6c684741-2ec3-4247-96d0-6ba515de203d)
+
+##### 微信联系
+
+![065a1e46fdef1d30bd0028f42ec1edf](https://github.com/wrss01/snb-docker-compose/assets/39665821/723e9eeb-f210-4cdd-bea4-f19d3ac961a2)
+
+##### Email联系
+wangxinyi@smartnotebook.tech
