@@ -59,7 +59,8 @@ print("Welcome to the world of SmartNoteBook \n"*15)
 
 ##### 微信联系
 
-![065a1e46fdef1d30bd0028f42ec1edf](https://github.com/wrss01/snb-docker-compose/assets/39665821/723e9eeb-f210-4cdd-bea4-f19d3ac961a2)
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/f05b8409-6543-4c4b-82ff-98358a601914)
+
 
 ##### Email联系
 wangxinyi@smartnotebook.tech
