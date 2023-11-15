@@ -2,7 +2,7 @@
 smartnotebook docker-compose 部署脚本
 
 -  本部署脚本生成的服务仅支持SmartNotebook 基本功能，如需扩展功能请与我们联系！
--  ~~暂不支持Mac 系统~~
+-  Linux、Mac 、windows 10 部署测试通过，软件上在mac、windows有小兼容问题，不影响使用。
 
 ## docker and docker-compose 版本：测试环境的参考版本
 - docker Version: 18.06.1-ce
