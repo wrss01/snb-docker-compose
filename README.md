@@ -19,6 +19,11 @@ chmod +x wait-for-it.sh
 ```
 
 ## 创建和启动容器组(Create and start containers)
+Mac 环境下需要手工pull mysql 镜像，
+```
+docker pull --platform linux/x86_64 mysql:5.7
+```
+
 ```shell
 docker-compose --project-name snb up
 ```
