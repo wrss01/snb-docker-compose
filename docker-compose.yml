@@ -1,11 +1,12 @@
 version: '3'
 
- 
 services:
    db:
      image: mysql:5.7
      environment:
        MYSQL_ROOT_PASSWORD: snbSNB521
+     volumes:
+       - ./data_mysql:/var/lib/mysql
 
    redis:
      image: redis:5.0.8
@@ -16,11 +17,13 @@ services:
      environment:
        MINIO_ROOT_USER: SNB_MINIO_ADMIN
        MINIO_ROOT_PASSWORD: SnbMinio_WXY_231008
+     volumes:
+       - ./data_minio:/bitnami/minio/data
    
    web:
      depends_on:
        - server
-     image:  smartnotebook/snb-web:1.7.3
+     image:  smartnotebook/snb-web:1.7.6
      volumes:
        - ./snb_nginx.conf:/tmp/snb_web/nginx.conf
      ports:
@@ -31,15 +34,17 @@ services:
        - db
        - redis
        - minio
-     image:  smartnotebook/snb-server:1.7.3
+     image:  smartnotebook/snb-server:1.7.6
      volumes:
        - ./server_conf.ini:/home/.config/server_conf.ini
        - ./wait-for-it.sh:/snb_server/wait-for-it.sh
+       - ./data_server:/home
      command: ["./wait-for-it.sh", "db:3306", "--", "python", "-m", "snb_server", "--allow-root"]
     
 
    node:
-     image:  smartnotebook/snb-node:1.7.3
+     image:  smartnotebook/snb-node:1.7.6
      volumes:
        - ./node_conf.ini:/home/.config/node_conf.ini
+       - ./data_node:/home
  
