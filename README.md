@@ -12,6 +12,12 @@ smartnotebook docker-compose 部署脚本
 ```shell
 git clone https://github.com/wrss01/snb-docker-compose.git
 ```
+
+## 创建本地持久化存储路径
+```
+sh pre_up.sh
+```
+
 ## 修改 wait-for-it.sh 执行权限
 ```shell
 cd snb-docker-compose/
