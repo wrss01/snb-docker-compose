@@ -39,7 +39,7 @@ docker-compose --project-name snb up
 ## 访问smartnotebook:
 http://ip/
 
-比如：[http://172.30.81.118/](http://47.116.50.172/)
+比如：http://47.116.50.172/
 
 ##### 登录页如下：
 
