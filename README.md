@@ -15,6 +15,7 @@ git clone https://github.com/wrss01/snb-docker-compose.git
 
 ## 创建本地持久化存储路径
 ```
+cd snb-docker-compose/
 sh pre_up.sh
 ```
 
