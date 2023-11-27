@@ -13,15 +13,10 @@ smartnotebook docker-compose 部署脚本
 git clone https://github.com/wrss01/snb-docker-compose.git
 ```
 
-## 创建本地持久化存储路径
+## 创建本地持久化存储路径、
 ```
-cd snb-docker-compose/
+cd snb-docker-compose/修改 wait-for-it.sh 执行权限
 sh pre_up.sh
-```
-
-## 修改 wait-for-it.sh 执行权限
-```shell
-cd snb-docker-compose/
 chmod +x wait-for-it.sh 
 ```
 
@@ -36,6 +31,11 @@ docker-compose --project-name snb up
 ```
 
 ![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/8d1fa962-fdcf-4b8f-8eea-65cb40887d85)
+
+## 拷贝DEMO数据
+```shell
+docker cp  snb-server-1:/usr/local/lib/python3.9/site-packages/init_data/.  data_node/
+```
 
 ## 访问smartnotebook:
 http://ip/
