@@ -80,3 +80,5 @@ print("Welcome to the world of SmartNoteBook \n"*15)
 
 ##### Email联系
 wangxinyi@smartnotebook.tech
+
+## 离线部署手册 参见 《离线部署.md》
