@@ -23,7 +23,7 @@ services:
    web:
      depends_on:
        - server
-     image:  smartnotebook/snb-web:1.7.6
+     image:  smartnotebook/snb-web:1.8.1
      volumes:
        - ./snb_nginx.conf:/tmp/snb_web/nginx.conf
      ports:
@@ -34,7 +34,7 @@ services:
        - db
        - redis
        - minio
-     image:  smartnotebook/snb-server:1.7.6
+     image:  smartnotebook/snb-server:1.8.1
      volumes:
        - ./server_conf.ini:/home/.config/server_conf.ini
        - ./wait-for-it.sh:/snb_server/wait-for-it.sh
@@ -43,7 +43,7 @@ services:
     
 
    node:
-     image:  smartnotebook/snb-node:1.7.6
+     image:  smartnotebook/snb-node:1.8.1
      volumes:
        - ./node_conf.ini:/home/.config/node_conf.ini
        - ./data_node:/home
