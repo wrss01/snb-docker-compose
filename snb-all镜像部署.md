@@ -4,7 +4,7 @@
 1. 安装Docker
 2. 简单启动snb服务
     ```bash
-    docker run -d -p 80:80 --name test-images smartnotebook/snb-all:1.0.0
+    docker run -d -p 80:80 --name snbServies smartnotebook/snb-all:1.0.0
     ```
 3. 通过IP访问
 
