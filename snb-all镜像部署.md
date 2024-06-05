@@ -6,7 +6,29 @@
     ```bash
     docker run -d -p 80:80 --name snbServies smartnotebook/snb-all:1.0.0
     ```
-3. 通过IP访问
+3. 复制镜像数据
+4. 通过IP访问
+5. 用户名密码
+   - 用户名: snb-demo@smartnotebook.tech
+   - 密码: 123456
+
+##### 登录成功后的首页：
+
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/e3c35e3c-10c5-4447-a0b0-59f78f47db63)
+
+## 创建第一notebook：
+
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/8dda2eaa-77a6-4ed7-99d8-81537af834bd)
+
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/bec3d224-dc31-4b8e-9ef4-0b30a708151c)
+
+##### 编写第一行python 代码并运行
+
+```python
+print("Welcome to the world of SmartNoteBook \n"*15)
+```
+
+![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/fc4d4830-833d-434b-bb46-d5d815b52b86)
 
 > **Tips：**
 > 
