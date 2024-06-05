@@ -16,7 +16,7 @@
 
 ![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/e3c35e3c-10c5-4447-a0b0-59f78f47db63)
 
-> 进入计算环境，重新挂载node，修改node的域名或者IP
+> **进入计算环境，重新挂载node，修改node的域名或者IP**
     ![image](https://github.com/wrss01/snb-docker-compose/assets/93983997/fe61e3f4-9415-447c-897e-f5ffa89a0dc3)
 
 
