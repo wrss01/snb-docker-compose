@@ -7,6 +7,9 @@
     docker run -d -p 80:80 --name snbServies smartnotebook/snb-all:1.0.0
     ```
 3. 复制镜像数据
+    ```bash
+   docker exec snbServies cp -r /root/.pyenv/versions/3.9.19/envs/snb_server/lib/python3.9/site-packages/init_data/. /home 
+    ```
 4. 通过IP访问
 5. 用户名密码
    - 用户名: snb-demo@smartnotebook.tech
