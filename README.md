@@ -71,7 +71,7 @@ print("Welcome to the world of SmartNoteBook \n"*15)
 
 
 ## 其他方式部署
-[单容器部署](/snb-all镜像部署.md)
+[单容器部署](/snb-all-readme.md)
 <br>
 [离线部署](/离线部署.md)
 
