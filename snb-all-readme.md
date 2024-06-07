@@ -39,6 +39,6 @@ print("Welcome to the world of SmartNoteBook \n"*15)
 
 > **Tips：**
 > 
-> **重启服务会导致数据库和对象存储数据丢失，建议挂载SNB数据文件到服务器，重启服务前对数据文件进行迁移和备份**
+> **容器删除会导致数据库和对象存储数据丢失，建议挂载SNB数据文件到服务器，重置容器前对数据文件进行迁移和备份**
 > 1. **Minio存储路径：/usr/local/src/minio/data**  
 > 2. **MySQL存储路径：/usr/local/src/mysql/data**
