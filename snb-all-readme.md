@@ -1,10 +1,10 @@
-# 使用smartnotebook/snb-all镜像部署
+# 单容器部署
 
 ##  启动服务
 1. 安装Docker
 2. 简单启动snb服务
     ```bash
-    docker run -d -p 80:80 --name snbServies smartnotebook/snb-all:1.0.0
+    docker run -d -p 80:80 --name snbServies registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-all:1.0.2
     ```
 3. 复制镜像数据
     ```bash
@@ -39,6 +39,6 @@ print("Welcome to the world of SmartNoteBook \n"*15)
 
 > **Tips：**
 > 
-> **容器删除会导致数据库和对象存储数据丢失，建议挂载SNB数据文件到服务器，重置容器前对数据文件进行迁移和备份**
+> **建议挂载SNB数据文件到服务器**
 > 1. **Minio存储路径：/usr/local/src/minio/data**  
 > 2. **MySQL存储路径：/usr/local/src/mysql/data**
