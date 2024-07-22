@@ -1,4 +1,20 @@
-[TOC]
+- 目录
+  - snb-docker-compose部署
+    1. 参考版本
+    2. git clone脚本
+    3. 创建本地持久化存储路径
+    4. 创建和启动容器组
+    5. 拷贝demo数据（可选）
+  - 测试
+    1. 访问 smartnotebook
+    2. 创建第一个notebook
+  - 其他部署
+    1. 单容器部署
+    2. 离线部署
+    3. py3.12node部署
+  - 问题反馈和交流
+
+----
 
 # snb-docker-compose
 smartnotebook docker-compose 部署脚本
@@ -75,7 +91,7 @@ print("Welcome to the world of SmartNoteBook \n"*15)
 ## 其他方式部署
 ### [1.单容器部署](/snb-all-readme.md)
 ### [2.离线部署](/离线部署.md)
-### [3.Py3.12node部署](/离线部署.md)
+### [3.py3.12node部署](/离线部署.md)
 
 ## 问题反馈和交流
 ##### 新语数据故事会
