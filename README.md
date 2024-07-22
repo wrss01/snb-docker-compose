@@ -1,3 +1,5 @@
+[TOC]
+
 # snb-docker-compose
 smartnotebook docker-compose 部署脚本
 
@@ -71,9 +73,9 @@ print("Welcome to the world of SmartNoteBook \n"*15)
 
 
 ## 其他方式部署
-[单容器部署](/snb-all-readme.md)
-<br>
-[离线部署](/离线部署.md)
+### [1.单容器部署](/snb-all-readme.md)
+### [2.离线部署](/离线部署.md)
+### [3.Py3.12node部署](/离线部署.md)
 
 ## 问题反馈和交流
 ##### 新语数据故事会
