@@ -13,7 +13,7 @@ services:
      command: redis-server --requirepass 5e11a0dc0699-44faf83d-5c122c1b-847b  --appendonly yes
    
    minio:
-     image: registry.cn-hangzhou.aliyuncs.com/smartnotebook/smartnotebook/snb-minio:V1.5
+     image: registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-minio:V1.5
      environment:
        MINIO_ROOT_USER: SNB_MINIO_ADMIN
        MINIO_ROOT_PASSWORD: SnbMinio_WXY_231008
