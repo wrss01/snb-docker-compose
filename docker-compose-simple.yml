@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+
+   server:
+     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-server:1.8.8
+     volumes:
+       - ./data_server:/home
+     command: ["python", "-m", "snb_server", "--allow-root"]
+     ports:
+       - "9900:9000"
+
+   node:
+     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-node:1.8.8
+     volumes:
+       - ./data_node:/home
+
