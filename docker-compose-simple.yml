@@ -5,6 +5,7 @@ services:
    server:
      image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-server:${VERSION:-1.8.8}
      volumes:
+       - ./data_server/.config/SNBDB:/home/.config/SNBDB
        - ./data_server:/home
      command: ["python", "-m", "snb_server", "--allow-root"]
      ports:
