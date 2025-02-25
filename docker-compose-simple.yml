@@ -9,9 +9,11 @@ services:
      command: ["python", "-m", "snb_server", "--allow-root"]
      ports:
        - "${EXPOSE_PORT:-9900}:9000"
+     restart: always
 
    node:
      image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-node:${VERSION:-1.8.8}
      volumes:
        - ./data_node:/home
+     restart: always
 
