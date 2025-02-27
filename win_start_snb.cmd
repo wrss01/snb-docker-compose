@@ -1,3 +1,4 @@
+chcp 65001
 REM 检查参数
 if "%~1"=="install" (
     call :install
