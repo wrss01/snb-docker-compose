@@ -1,49 +1,49 @@
-REM ¼ì²é²ÎÊı
+REM æ£€æŸ¥å‚æ•°
 if "%~1"=="install" (
     call :install
     exit /b
 )
 
-REM Æô¶¯ snb_linux £¬Æô¶¯³É¹¦ºó½øÈëlinux shell ½çÃæ
-REM ÉÔºó¼¸Ãëºó£¬ä¯ÀÀÆ÷´ò¿ª£ºhttp://127.0.0.1/  ¼´¿É·ÃÎÊÊ¹ÓÃ£ºSmartNotebook 
-REM ³õÊ¼ÓÃ»§Ãû£º snb-demo@smartnotebook.tech  ³õÊ¼ÃÜÂë£º123456
-REM ¿ªÆôÄúµÄÊı¾İ·ÖÎöÓä¿ìÖ®ÂÃ
-REM Èç¹ûÌáÊ¾¡°²»´æÔÚ¾ßÓĞËùÌá¹©Ãû³ÆµÄ·Ö·¢¡£¡±£¬ÇëÖ´ĞĞ°²×°ÃüÁî£ºwin_start_snb.cmd install
-wsl -d snb_linux --user root
+REM å¯åŠ¨ snb_linux ï¼Œå¯åŠ¨æˆåŠŸåè¿›å…¥linux shell ç•Œé¢
+REM ç¨åå‡ ç§’åï¼Œæµè§ˆå™¨æ‰“å¼€ï¼šhttp://127.0.0.1/  å³å¯è®¿é—®ä½¿ç”¨ï¼šSmartNotebook 
+REM åˆå§‹ç”¨æˆ·åï¼š snb-demo@smartnotebook.tech  åˆå§‹å¯†ç ï¼š123456
+REM å¼€å¯æ‚¨çš„æ•°æ®åˆ†ææ„‰å¿«ä¹‹æ—…
+REM å¦‚æœæç¤ºâ€œä¸å­˜åœ¨å…·æœ‰æ‰€æä¾›åç§°çš„åˆ†å‘ã€‚â€ï¼Œè¯·æ‰§è¡Œå®‰è£…å‘½ä»¤ï¼šwin_start_snb.cmd install
+wsl.exe -d snb_linux --user root
 exit /b
 
 :install
+curl -o wsl.exe https://gitee.com/smartnotebook/snb-docker-compose/raw/main/publish/wsl.exe
+REM æ£€æŸ¥ WSL çŠ¶æ€
+wsl.exe --status
 
-REM ¼ì²é WSL ×´Ì¬
-wsl --status
+REM æ›´æ–° WSL
+wsl.exe --update
 
-REM ¸üĞÂ WSL
-wsl --update
-
-REM °²×° Ubuntu-24.04 ·¢ĞĞ°æ£¬²¢Ö¸¶¨°²×°Â·¾¶Îªµ±Ç°Ä¿Â¼
+REM å®‰è£… Ubuntu-24.04 å‘è¡Œç‰ˆï¼Œå¹¶æŒ‡å®šå®‰è£…è·¯å¾„ä¸ºå½“å‰ç›®å½•
 curl -o ubuntu-24.04.2-wsl-amd64.wsl https://releases.ubuntu.com/noble/ubuntu-24.04.2-wsl-amd64.wsl
-wsl --install --name snb_linux --location %cd% --from-file ubuntu-24.04.2-wsl-amd64.wsl
+wsl.exe --install --name snb_linux --location %cd% --from-file ubuntu-24.04.2-wsl-amd64.wsl
 
-REM ÁĞ³öÒÑ°²×°µÄlinux
-wsl --list
+REM åˆ—å‡ºå·²å®‰è£…çš„linux
+wsl.exe --list
 
-REM ÔÚ snb_linux ÖĞ°²×° Docker£¨Í¨¹ı Snap£©
-wsl -d snb_linux --user root snap install docker
+REM åœ¨ snb_linux ä¸­å®‰è£… Dockerï¼ˆé€šè¿‡ Snapï¼‰
+wsl.exe -d snb_linux --user root snap install docker
 
-REM ÅäÖÃ Git È«¾ÖÓÃ»§ÃûºÍÓÊÏä
-wsl -d snb_linux --user root git config --global user.name "smartnotebook"
-wsl -d snb_linux --user root git config --global user.email "15492003+smartnotebook@user.noreply.gitee.com"
+REM é…ç½® Git å…¨å±€ç”¨æˆ·åå’Œé‚®ç®±
+wsl.exe -d snb_linux --user root git config --global user.name "smartnotebook"
+wsl.exe -d snb_linux --user root git config --global user.email "15492003+smartnotebook@user.noreply.gitee.com"
 
-REM ¿ËÂ¡ Git ²Ö¿â
-wsl -d snb_linux --user root git clone https://gitee.com/smartnotebook/snb-docker-compose.git
+REM å…‹éš† Git ä»“åº“
+wsl.exe -d snb_linux --user root git clone https://gitee.com/smartnotebook/snb-docker-compose.git
 
 cd snb-docker-compose
 
-REM ½øÈë¿ËÂ¡µÄ²Ö¿âÄ¿Â¼²¢Ö´ĞĞ²¿Êğ½Å±¾
-wsl -d snb_linux --user root export PATH=$PATH:/snap/bin ;sleep 2; sh deploy-simple.sh
+REM è¿›å…¥å…‹éš†çš„ä»“åº“ç›®å½•å¹¶æ‰§è¡Œéƒ¨ç½²è„šæœ¬
+wsl.exe -d snb_linux --user root export PATH=$PATH:/snap/bin ;sleep 2; sh deploy-simple.sh
 
 cd ..
 
-REM °²×°³É¹¦£¬½øÈë snb_linux linux,ÉèÖÃlinux Ä¬ÈÏÓÃ»§ÃûºÍÃÜÂë
-REM È»ºóexitÍË³ölinux£¬ÖØĞÂÖ´ĞĞ win_start_snb.cmd
-wsl -d snb_linux --user root
+REM å®‰è£…æˆåŠŸï¼Œè¿›å…¥ snb_linux linux,è®¾ç½®linux é»˜è®¤ç”¨æˆ·åå’Œå¯†ç 
+REM ç„¶åexité€€å‡ºlinuxï¼Œé‡æ–°æ‰§è¡Œ win_start_snb.cmd
+wsl.exe -d snb_linux --user root
