@@ -13,7 +13,6 @@ wsl.exe -d snb_linux --user root
 exit /b
 
 :install
-curl -o wsl.exe https://gitee.com/smartnotebook/snb-docker-compose/raw/main/publish/wsl.exe
 REM 检查 WSL 状态
 wsl.exe --status
 
