@@ -1,39 +1,9 @@
 ﻿
 function Install-Snb {
     try {
-        Write-Host "检查 WSL 版本"
+        Write-Host "导入 snb_linux_1.8.10.tar.gz"
 
-        $wsl_version = wsl.exe --version
-        $wsl_version = $wsl_version -replace "[^\x20-\x7E]", ""
-        if ( -Not ($wsl_version -match "2.4.11.0") )
-        {
-            
-            Write-Host "wsl 版本太低:$wsl_version,下载wsl 最新版本安装"
-            Write-Host "自动下载，下载后安装 wsl.2.4.11.0.x64.msi  https://github.com/microsoft/WSL/releases/download/2.4.11/wsl.2.4.11.0.x64.msi"
-            #Invoke-WebRequest -Uri "https://github.com/microsoft/WSL/releases/download/2.4.11/wsl.2.4.11.0.x64.msi" -OutFile wsl.2.4.11.0.x64.msi
-            Write-Host "安装 wsl.2.4.11.0.x64.msi"
-            Write-Host "安装相关组件:  wsl --install "
-           # exit 1
-        }
-        
-        $wslList = wsl.exe --list --quiet
-        if ($wslList -contains "snb_linux") {
-            Write-Host "snb_linux 已经安装，跳过安装步骤。"
-        } else  {
-            $wslFile = "ubuntu-24.04.2-wsl-amd64.wsl"
-            if ( -Not ( Test-Path $wslFile ) ) {
-                Write-Host "下载 Ubuntu-24.04 WSL 镜像..."
-                Invoke-WebRequest -Uri "https://releases.ubuntu.com/noble/ubuntu-24.04.2-wsl-amd64.wsl" -OutFile $wslFile
-            }
-
-            Write-Host "安装 snb_linux..."
-            wsl.exe --install --name snb_linux --location $PWD --from-file $wslFile
-        }
-
-        wsl.exe --list
-
-        Write-Host "在 snb_linux 中安装 Docker..."
-        wsl.exe -d snb_linux --user root snap install docker
+        wsl --import snb_linux  $PWD snb_linux_1.8.10.tar.gz
         
         Write-Host "配置 Git 全局用户名和邮箱..."
         wsl.exe -d snb_linux --user root git config --global user.name "smartnotebook"
@@ -45,9 +15,7 @@ function Install-Snb {
         Write-Host "进入克隆的仓库目录并执行部署脚本..."
         wsl.exe -d snb_linux --user root export PATH=`$PATH:/snap/bin `; sleep 2 `; cd snb-docker-compose `; sh deploy-simple.sh
 
-        wsl.exe -d snb_linux --user root bash -c "$command"
-
-        Write-Host "安装成功，进入 snb_linux linux,设置 Linux 默认用户名和密码"
+        Write-Host "部署成功"
         Write-Host "然后 exit 退出 Linux，重新执行 win_start_snb.ps1"
         wsl.exe -d snb_linux --user root
     } catch {
