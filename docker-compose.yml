@@ -20,31 +20,24 @@ services:
      volumes:
        - ./data_minio:/bitnami/minio/data
    
-   web:
-     depends_on:
-       - server
-     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-web:1.8.7
-     volumes:
-       - ./snb_nginx.conf:/tmp/snb_web/nginx.conf
-     ports:
-       - "80:80"
-   
    server:
      depends_on:
        - db
        - redis
        - minio
-     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-server:1.8.7
+     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-server:1.8.10
      volumes:
-       - ./server_conf.ini:/home/.config/server_conf.ini
+       - ./data_serve/server_conf_all.ini:/home/.config/server_conf.ini
        - ./wait-for-it.sh:/snb_server/wait-for-it.sh
        - ./data_server:/home
      command: ["./wait-for-it.sh", "db:3306", "--", "python", "-m", "snb_server", "--allow-root"]
+     ports:
+       - "80:8080"
     
 
    node:
-     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-node:1.8.7
+     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-node:1.8.10
      volumes:
-       - ./node_conf.ini:/home/.config/node_conf.ini
+       - ./data_node/node_conf_all.ini:/home/.config/node_conf.ini
        - ./data_node:/home
  
