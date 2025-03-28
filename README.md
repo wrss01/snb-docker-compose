@@ -2,8 +2,8 @@
   - snb-docker-compose部署
     1. 参考版本
     2. git clone脚本
-    3. 创建本地持久化存储路径
-    4. 创建和启动容器组
+    3. docker-compose 方式部署
+    4. windows WSL 方式部署
   - 测试
     1. 访问 smartnotebook
     2. 创建第一个notebook
@@ -117,5 +117,3 @@ print("Welcome to the world of SmartNoteBook \n"*15)
 
 ##### Email联系
 wangxinyi@smartnotebook.tech
-
-## 离线部署手册 参见 《离线部署.md》
