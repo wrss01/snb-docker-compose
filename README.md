@@ -4,14 +4,9 @@
     2. git clone脚本
     3. 创建本地持久化存储路径
     4. 创建和启动容器组
-    5. 拷贝demo数据（可选）
   - 测试
     1. 访问 smartnotebook
     2. 创建第一个notebook
-  - 其他部署
-    1. 单容器部署
-    2. 离线部署
-    3. py3.12node部署
   - 问题反馈和交流
 
 ----
@@ -19,41 +14,64 @@
 # snb-docker-compose
 smartnotebook docker-compose 部署脚本
 
--  本部署脚本生成的服务仅支持SmartNotebook 基本功能，如需扩展功能请与我们联系！
--  Linux、Mac 、windows 10 部署测试通过，软件上在mac、windows有小兼容问题，不影响使用。
+-  本部署脚本生成的服务仅支持SmartNotebook 全部功能，如需定制功能或技术支持请与我们联系！
 
 ## docker and docker-compose 版本：测试环境的参考版本
 - docker Version: 18.06.1-ce
 - Docker Compose version: v2.23.0
 
 ## git clone 脚本
+
+### github.com
+
 ```shell
 git clone https://github.com/wrss01/snb-docker-compose.git
 ```
 
-## 创建本地持久化存储路径、
-```
-cd snb-docker-compose/修改 wait-for-it.sh 执行权限
-sh pre_up.sh
-chmod +x wait-for-it.sh 
-```
-
-## 创建和启动容器组(Create and start containers)
-Mac 环境下需要手工pull mysql 镜像，
-```
-docker pull --platform linux/x86_64 mysql:5.7
-```
+### gitee.com
 
 ```shell
-docker-compose --project-name snb up
+git config --global user.name "smartnotebook"
+git config --global user.email "15492003+smartnotebook@user.noreply.gitee.com"
+git clone https://gitee.com/smartnotebook/snb-docker-compose.git
 ```
+## docker-compose 方式部署
+
+### simple 简化部署(Create and start containers)
+中间件(数据库、minio、redis)内置方式，只需要两个容器。如需要修改端口，请修改docker-compose-simple.sh 文件。
+```shell
+cd snb-docker-compose
+sh docker-compose-simple.sh
+```
+
+### 全部件部署(Create and start containers)
+中间件使用mysql、minio、redis，全部需要五个容器。如需要修改端口，请修改docker-compose.sh 文件。
+```shell
+cd snb-docker-compose
+sh docker-compose.sh
+```
+
+## windows WSL 方式部署
+
+1. 下载部署程序和WSL 文件检查
+
+请先确认您的 WSL 版本是否满足要求，若版本过低，您可以通过百度网盘下载最新版 WSL 安装包进行升级；下载地址链接: https://pan.baidu.com/s/1cRKVnvAVqbxLl27kvxMD2w?pwd=9ypk  提取码: 9ypk 。
+    温馨提示：在部署之前，请确保您的 CPU 已开启 VT（虚拟化技术）指令，以支持虚拟化环境的正常运行。
+• 下载网盘上三个文件，包括部署脚本（win_start_snb.ps1）、虚拟机文件(snb_linux_1.8.10.tar.gz)、wsl 安装文件(wsl.2.4.11.0.x64.msi)。
+• 确认WSL 版本和 Windows 启用 VT（虚拟化技术），如果版本比较低，请安装wsl.2.4.11.0.x64.msi ,安装完成后，执行 wsl --install 安装wsl组件。 
+• 确保有足够的空间，然后在指定文件夹下打开 power shell，执行以下命令下载安装脚本进行安装
+
+2. 安装部署
+
+参考wsl power shell 脚本win_start_snb.ps1，接下来执行安装命令，进行部署：
+
+```shell
+win_start_snb.ps1 install
+```
+
 
 ![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/8d1fa962-fdcf-4b8f-8eea-65cb40887d85)
 
-## 拷贝DEMO数据
-```shell
-docker cp  snb-server-1:/usr/local/lib/python3.9/site-packages/init_data/.  data_node/
-```
 
 ## 访问smartnotebook:
 http://ip/
@@ -87,12 +105,6 @@ print("Welcome to the world of SmartNoteBook \n"*15)
 
 ![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/fc4d4830-833d-434b-bb46-d5d815b52b86)
 
-
-## 其他方式部署
-### [1.单容器部署](/snb-all-readme.md)
-### [2.离线部署](/离线部署.md)
-### [3.简单部署](/简单部署.md)
-### [3.python-3.12.4 node部署](/publish/1.0.0.md)
 
 ## 问题反馈和交流
 ##### 新语数据故事会
