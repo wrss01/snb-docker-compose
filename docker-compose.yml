@@ -25,7 +25,7 @@ services:
        - db
        - redis
        - minio
-     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-server:1.8.10
+     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-server:${VERSION:-1.8.8}
      volumes:
        - ./data_serve/server_conf_all.ini:/home/.config/server_conf.ini
        - ./wait-for-it.sh:/snb_server/wait-for-it.sh
@@ -36,7 +36,7 @@ services:
     
 
    node:
-     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-node:1.8.10
+     image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-node:${VERSION:-1.8.8}
      volumes:
        - ./data_node/node_conf_all.ini:/home/.config/node_conf.ini
        - ./data_node:/home
