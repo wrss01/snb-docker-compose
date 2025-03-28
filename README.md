@@ -56,10 +56,12 @@ sh docker-compose.sh
 1. 下载部署程序和WSL 文件检查
 
 请先确认您的 WSL 版本是否满足要求，若版本过低，您可以通过百度网盘下载最新版 WSL 安装包进行升级；下载地址链接: https://pan.baidu.com/s/1cRKVnvAVqbxLl27kvxMD2w?pwd=9ypk  提取码: 9ypk 。
-    温馨提示：在部署之前，请确保您的 CPU 已开启 VT（虚拟化技术）指令，以支持虚拟化环境的正常运行。
-• 下载网盘上三个文件，包括部署脚本（win_start_snb.ps1）、虚拟机文件(snb_linux_1.8.10.tar.gz)、wsl 安装文件(wsl.2.4.11.0.x64.msi)。
-• 确认WSL 版本和 Windows 启用 VT（虚拟化技术），如果版本比较低，请安装wsl.2.4.11.0.x64.msi ,安装完成后，执行 wsl --install 安装wsl组件。 
-• 确保有足够的空间，然后在指定文件夹下打开 power shell，执行以下命令下载安装脚本进行安装
+
+温馨提示：在部署之前，请确保您的 CPU 已开启 VT（虚拟化技术）指令，以支持虚拟化环境的正常运行。
+
+- 下载网盘上三个文件，包括部署脚本（win_start_snb.ps1）、虚拟机文件(snb_linux_1.8.10.tar.gz)、wsl 安装文件(wsl.2.4.11.0.x64.msi)。
+- 确认WSL 版本和 Windows 启用 VT（虚拟化技术），如果版本比较低，请安装wsl.2.4.11.0.x64.msi ,安装完成后，执行 wsl --install 安装wsl组件。 
+- 确保有足够的空间，然后在指定文件夹下打开 power shell，执行以下命令下载安装脚本进行安装
 
 2. 安装部署
 
