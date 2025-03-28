@@ -32,7 +32,7 @@ services:
        - ./data_server:/home
      command: ["./wait-for-it.sh", "db:3306", "--", "python", "-m", "snb_server", "--allow-root"]
      ports:
-       - "80:8080"
+       - "${EXPOSE_PORT:-80}:8080"
     
 
    node:
