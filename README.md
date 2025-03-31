@@ -31,8 +31,6 @@ git clone https://github.com/wrss01/snb-docker-compose.git
 ### gitee.com
 
 ```shell
-git config --global user.name "smartnotebook"
-git config --global user.email "15492003+smartnotebook@user.noreply.gitee.com"
 git clone https://gitee.com/smartnotebook/snb-docker-compose.git
 ```
 ## docker-compose 方式部署
