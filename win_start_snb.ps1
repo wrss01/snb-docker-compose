@@ -5,15 +5,11 @@ function Install-Snb {
 
         wsl --import snb_linux  $PWD snb_linux_1.8.10.tar.gz
         
-        Write-Host "配置 Git 全局用户名和邮箱..."
-        wsl.exe -d snb_linux --user root git config --global user.name "smartnotebook"
-        wsl.exe -d snb_linux --user root git config --global user.email "15492003+smartnotebook@user.noreply.gitee.com"
-        
         Write-Host "克隆 Git 仓库..."
         wsl.exe -d snb_linux --user root git clone https://gitee.com/smartnotebook/snb-docker-compose.git
 
         Write-Host "进入克隆的仓库目录并执行部署脚本..."
-        wsl.exe -d snb_linux --user root export PATH=`$PATH:/snap/bin `; sleep 2 `; cd snb-docker-compose `; sh deploy-simple.sh
+        wsl.exe -d snb_linux --user root export PATH=`$PATH:/snap/bin `; sleep 2 `; cd snb-docker-compose `; sh docker-compose-simple.sh
 
         Write-Host "部署成功"
         Write-Host "然后 exit 退出 Linux，重新执行 win_start_snb.ps1"
