@@ -7,11 +7,7 @@ services:
        MYSQL_ROOT_PASSWORD: snbSNB521
      volumes:
        - ./data_mysql:/var/lib/mysql
-
-   redis:
-     image: registry.cn-hangzhou.aliyuncs.com/smartnotebook/redis:5.0.8
-     command: redis-server --requirepass 5e11a0dc0699-44faf83d-5c122c1b-847b  --appendonly yes
-   
+  
    minio:
      image: registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-minio:V1.5
      environment:
@@ -23,11 +19,10 @@ services:
    server:
      depends_on:
        - db
-       - redis
        - minio
      image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-server:${VERSION:-1.8.8}
      volumes:
-       - ./data_serve/server_conf_all.ini:/home/.config/server_conf.ini
+       - ./server/.config/server_conf_all.ini:/home/.config/server_conf.ini
        - ./wait-for-it.sh:/snb_server/wait-for-it.sh
        - ./data_server:/home
      command: ["./wait-for-it.sh", "db:3306", "--", "python", "-m", "snb_server", "--allow-root"]
@@ -37,7 +32,7 @@ services:
 
    node:
      image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-node:${VERSION:-1.8.8}
-     volumes:
-       - ./data_node/node_conf_all.ini:/home/.config/node_conf.ini
+     volumes:     
+       - ./data_node/.config/node_conf_all.ini:/home/.config/node_conf.ini
        - ./data_node:/home
  
