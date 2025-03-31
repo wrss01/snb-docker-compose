@@ -22,7 +22,7 @@ services:
        - minio
      image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-server:${VERSION:-1.8.8}
      volumes:
-       - ./server/.config/server_conf_all.ini:/home/.config/server_conf.ini
+       - ./data_server/.config/server_conf_all.ini:/home/.config/server_conf.ini
        - ./wait-for-it.sh:/snb_server/wait-for-it.sh
        - ./data_server:/home
      command: ["./wait-for-it.sh", "db:3306", "--", "python", "-m", "snb_server", "--allow-root"]
