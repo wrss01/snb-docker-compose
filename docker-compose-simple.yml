@@ -4,6 +4,7 @@ services:
 
    server:
      image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-server:${VERSION:-1.8.8}
+     privileged: true
      volumes:
        - ./data_server:/home
      command: ["python", "-m", "snb_server", "--allow-root"]
@@ -13,6 +14,7 @@ services:
 
    node:
      image:  registry.cn-hangzhou.aliyuncs.com/smartnotebook/snb-node:${VERSION:-1.8.8}
+     privileged: true
      volumes:
        - ./data_node:/home
      restart: always
