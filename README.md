@@ -105,6 +105,9 @@ print("Welcome to the world of SmartNoteBook \n"*15)
 
 ![image](https://github.com/wrss01/snb-docker-compose/assets/39665821/fc4d4830-833d-434b-bb46-d5d815b52b86)
 
+## GPU 的支持
+
+参考 GPU.md
 
 ## 问题反馈和交流
 ##### 新语数据故事会
