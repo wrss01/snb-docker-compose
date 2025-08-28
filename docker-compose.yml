@@ -39,4 +39,4 @@ services:
      volumes:     
        - ./data_node/.config/node_conf_all.ini:/home/.config/node_conf.ini
        - ./data_node:/home
- 
+     #gpus: all 

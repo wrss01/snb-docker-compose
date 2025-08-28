@@ -18,4 +18,4 @@ services:
      volumes:
        - ./data_node:/home
      restart: always
-
+     #gpus: all
